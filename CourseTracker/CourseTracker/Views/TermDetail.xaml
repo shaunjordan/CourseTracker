@@ -1,24 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:CourseTracker"
-             x:Class="CourseTracker.MainPage">
-
+             x:Class="CourseTracker.Views.TermDetail">
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="AddTerm_TB" Text="Add Term" Activated="AddTerm_TB_Activated"></ToolbarItem>
         
+        <ToolbarItem x:Name="AddCourse_TB" Text="Add Course" Activated="AddCourse_TB_Activated"></ToolbarItem>
     </ContentPage.ToolbarItems>
 
-    <ListView x:Name="termListView" ItemSelected="TermListView_ItemSelected">
+    <ListView x:Name="courseListView" ItemSelected="CourseListView_ItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
                     <StackLayout>
-                        <Label Text="{Binding TermName}"/>
+                        <Label Text="{Binding CourseName}"/>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-
 </ContentPage>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseTracker.Views.AddCourse">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="CourseNameEntry" Placeholder="Enter Course Name"/>
+            <Entry x:Name="InstrNameEntry" Placeholder="Enter Instructor Name"/>
+            <Entry x:Name="InstrPhoneEntry" Placeholder="Enter Instructor Phone"/>
+            <Entry x:Name="InstrEmailEntry" Placeholder="Enter Instructor Email"/>
+            <Label Text="Course Start Date" FontSize="Medium"/>
+            <DatePicker x:Name="CourseStart" 
+                        MinimumDate="01/01/2019"
+                        MaximumDate="12/31/2050"
+                        Date="01/01/2019">
+            </DatePicker>
+            <Label Text="Course End Date" FontSize="Medium"/>
+            <DatePicker x:Name="CourseEnd" 
+                        MinimumDate="01/01/2019"
+                        MaximumDate="12/31/2050"
+                        Date="01/01/2019">
+            </DatePicker>
+            <Entry x:Name="NotesEntry" Placeholder="Enter Notes"/>
+            <Button x:Name="SaveCourseButton" Text="Save" Clicked="SaveCourseButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
