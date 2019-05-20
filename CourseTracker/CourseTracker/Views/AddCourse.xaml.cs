@@ -35,12 +35,15 @@ namespace CourseTracker.Views
                 InstructorName = InstrNameEntry.Text,
                 InstructorPhone = InstrPhoneEntry.Text,
                 InstructorEmail = InstrEmailEntry.Text,
+                Status = StatusPicker.SelectedItem.ToString(),
                 StartDate = CourseStart.Date,
                 EndDate = CourseEnd.Date,
                 Notes = NotesEntry.Text
             };
 
             await App.Database.SaveCourse(course);
+
+            await Navigation.PopModalAsync();
         }
     }
 }

@@ -22,7 +22,9 @@ namespace CourseTracker.Views
         {
             Term term = new Term()
             {
-                TermName = TermNameEntry.Text
+                TermName = TermNameEntry.Text,
+                TermStart = TermStart.Date,
+                TermEnd = TermEnd.Date
             };
 
             await App.Database.SaveTerm(term);

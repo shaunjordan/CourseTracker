@@ -27,12 +27,21 @@ namespace CourseTracker.Views
 
         private void CourseListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            //send to CourseDetail page - pass in the course id for the assessment page
         }
 
         async void AddCourse_TB_Activated(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new AddCourse(term_id));
         }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();                      
+            
+            courseListView.ItemsSource = await App.Database.GetCourses(term_id);
+        }
+
+        
     }
 }

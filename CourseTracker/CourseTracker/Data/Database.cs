@@ -9,7 +9,7 @@ namespace CourseTracker.Data
 {
     public class Database
     {
-
+        //TODO: no foreign key, so prevent delete if there is a course with a term id
         readonly SQLiteAsyncConnection database;
 
         public Database(string databasePath)
@@ -26,9 +26,9 @@ namespace CourseTracker.Data
             return database.Table<Term>().ToListAsync();
         }
 
-        public Task<List<Course>> GetCourses()
+        public Task<List<Course>> GetCourses(int termId)
         {
-            //database
+            var course = database.QueryAsync<Course>("SELECT * FROM Course WHERE TermId = ?", termId);
             return database.Table<Course>().ToListAsync();
         }
 

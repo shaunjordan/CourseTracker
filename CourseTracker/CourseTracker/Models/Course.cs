@@ -9,7 +9,7 @@ namespace CourseTracker.Models
     {
         [PrimaryKey, AutoIncrement]
         public int CourseId { get; set; }
-
+                
         public int TermId { get; set; }
 
         public string CourseName { get; set; }
@@ -19,6 +19,8 @@ namespace CourseTracker.Models
         public string InstructorPhone { get; set; }
 
         public string InstructorEmail { get; set; }
+
+        public string Status { get; set; }
 
         public string Notes { get; set; }
 
