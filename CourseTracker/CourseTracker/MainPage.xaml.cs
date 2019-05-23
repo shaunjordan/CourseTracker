@@ -20,7 +20,9 @@ namespace CourseTracker
         {
             var termItem = e.SelectedItem as Term;
 
-            await Navigation.PushAsync(new TermDetail(termItem.TermId, termItem.TermName));
+            //await Navigation.PushAsync(new TermDetail(termItem.TermId, termItem.TermName));
+
+            await Navigation.PushModalAsync(new TermTaskModal(termItem.TermId));
         }
 
         protected override async void OnAppearing()
@@ -32,7 +34,7 @@ namespace CourseTracker
 
         async void AddTerm_TB_Activated(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new AddTerm());
+            await Navigation.PushAsync(new AddTerm());
         }
     }
 }

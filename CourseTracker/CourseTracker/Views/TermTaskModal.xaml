@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseTracker.Views.TermTaskModal">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Button x:Name="ViewTermDetails" 
+                    Text="View Details"
+                    BorderRadius="5"/>
+            <Button x:Name="EditTermDetails"
+                    Clicked="EditTermDetails_Clicked"
+                    Text="Edit Term"
+                    BorderRadius="5"/>
+            <Button x:Name="DeleteTerm" 
+                    Text="Delete Term"
+                    BorderRadius="5"/>
+            <Button x:Name="BackButton" 
+                    Text="Back" 
+                    Clicked="BackButton_Clicked"
+                    BorderRadius="5"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

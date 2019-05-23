@@ -31,7 +31,7 @@
     <EmbeddedResource Update="Views\TermDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\TermTask.xaml">
+    <EmbeddedResource Update="Views\TermTaskModal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
