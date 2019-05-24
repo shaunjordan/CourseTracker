@@ -4,8 +4,10 @@
              x:Class="CourseTracker.Views.TermTaskModal">
     <ContentPage.Content>
         <StackLayout Padding="10">
+            <Label x:Name="TermLabel" Text="{Binding TermName}"/>
             <Button x:Name="ViewTermDetails" 
                     Text="View Details"
+                    Clicked="ViewTermDetails_Clicked"
                     BorderRadius="5"/>
             <Button x:Name="EditTermDetails"
                     Clicked="EditTermDetails_Clicked"

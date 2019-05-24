@@ -53,7 +53,7 @@ namespace CourseTracker.Views
             }
 
             await App.Database.SaveTerm(term);
-            
+
             await Navigation.PopModalAsync();
         }
     }

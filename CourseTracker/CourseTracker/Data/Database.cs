@@ -26,6 +26,13 @@ namespace CourseTracker.Data
             return database.Table<Term>().ToListAsync();
         }
 
+        //maybe get a string instead
+        public Task<List<Term>> GetTerms(int termId)
+        {
+            var terms = database.QueryAsync<Term>("SELECT * FROM Term WHERE TermId = ?", termId);
+            return terms;
+        }
+
         public Task<List<Course>> GetCourses(int termId)
         {
             var termCourses = database.QueryAsync<Course>("SELECT * FROM Course WHERE TermId = ?", termId);

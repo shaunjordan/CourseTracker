@@ -5,8 +5,7 @@
              x:Class="CourseTracker.MainPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="AddTerm_TB" Text="Add Term" Activated="AddTerm_TB_Activated"></ToolbarItem>
-        
+        <ToolbarItem x:Name="AddTerm_TB" Text="Add Term" Activated="AddTerm_TB_Activated"></ToolbarItem>        
     </ContentPage.ToolbarItems>
 
     <ListView x:Name="termListView" ItemSelected="TermListView_ItemSelected">

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using CourseTracker.Models;
 
 namespace CourseTracker.Views
 {
@@ -13,16 +14,19 @@ namespace CourseTracker.Views
 	public partial class TermDetail : ContentPage
 	{
         int term_id;
+        //string term_name;
 
 		public TermDetail ()
 		{
 			InitializeComponent ();
+
 		}
 
-        public TermDetail(int termId, string termName)
+        public TermDetail(int termId)
         {
             InitializeComponent();
             term_id = termId;
+            
         }
 
         private void CourseListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
