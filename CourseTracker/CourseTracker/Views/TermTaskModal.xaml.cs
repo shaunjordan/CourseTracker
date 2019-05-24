@@ -19,7 +19,7 @@ namespace CourseTracker.Views
         {
             InitializeComponent();
 
-            BindingContext = App.Database.GetTerms(term_id);
+            //BindingContext = App.Database.GetTerms(term_id);
 
             termId = term_id;
         }
@@ -37,6 +37,13 @@ namespace CourseTracker.Views
         async void ViewTermDetails_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new TermDetail(termId));
+        }
+
+        async void DeleteTerm_Clicked(object sender, EventArgs e)
+        {
+            await App.Database.DeleteTerm(termId);
+
+            await Navigation.PopAsync();
         }
     }
 }

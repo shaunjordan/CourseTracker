@@ -27,11 +27,11 @@ namespace CourseTracker.Data
         }
 
         //maybe get a string instead
-        public Task<List<Term>> GetTerms(int termId)
-        {
-            var terms = database.QueryAsync<Term>("SELECT * FROM Term WHERE TermId = ?", termId);
-            return terms;
-        }
+        //public Task<List<Term>> GetTerms(int termId)
+        //{
+        //    var terms = database.QueryAsync<Term>("SELECT * FROM Term WHERE TermId = ?", termId);
+        //    return terms;
+        //}
 
         public Task<List<Course>> GetCourses(int termId)
         {
@@ -49,6 +49,11 @@ namespace CourseTracker.Data
             {
                 return database.InsertAsync(term);
             }
+        }
+
+        public Task<int> DeleteTerm(int termId)
+        {
+            return database.DeleteAsync<Term>(termId);
         }
 
         public Task<int> SaveCourse(Course course)

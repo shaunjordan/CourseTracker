@@ -34,7 +34,7 @@ namespace CourseTracker
 
         async void AddTerm_TB_Activated(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddTerm());
+            await Navigation.PushModalAsync(new AddTerm());
         }
     }
 }
