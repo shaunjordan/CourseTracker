@@ -14,32 +14,55 @@ namespace CourseTracker.Views
 	public partial class AddCourse : ContentPage
 	{
         int termId;
+        int courseId = 0;
 
 		public AddCourse ()
 		{
 			InitializeComponent ();
 		}
 
-        public AddCourse(int term_id)
+        public AddCourse(int term_id, int course_id)
         {
             InitializeComponent();
             termId = term_id;
+            courseId = course_id;
         }
 
         async void SaveCourseButton_Clicked(object sender, EventArgs e)
         {
-            Course course = new Course()
+            Course course;
+
+            if (courseId == 0)
             {
-                CourseName = CourseNameEntry.Text,
-                TermId = termId,                
-                InstructorName = InstrNameEntry.Text,
-                InstructorPhone = InstrPhoneEntry.Text,
-                InstructorEmail = InstrEmailEntry.Text,
-                Status = StatusPicker.SelectedItem.ToString(),
-                StartDate = CourseStart.Date,
-                EndDate = CourseEnd.Date,
-                Notes = NotesEntry.Text
-            };
+                course = new Course()
+                {
+                    CourseName = CourseNameEntry.Text,
+                    TermId = termId,
+                    InstructorName = InstrNameEntry.Text,
+                    InstructorPhone = InstrPhoneEntry.Text,
+                    InstructorEmail = InstrEmailEntry.Text,
+                    Status = StatusPicker.SelectedItem.ToString(),
+                    StartDate = CourseStart.Date,
+                    EndDate = CourseEnd.Date,
+                    Notes = NotesEntry.Text
+                };
+            }
+            else
+            {
+                course = new Course()
+                {
+                    CourseId = courseId,
+                    CourseName = CourseNameEntry.Text,
+                    TermId = termId,
+                    InstructorName = InstrNameEntry.Text,
+                    InstructorPhone = InstrPhoneEntry.Text,
+                    InstructorEmail = InstrEmailEntry.Text,
+                    Status = StatusPicker.SelectedItem.ToString(),
+                    StartDate = CourseStart.Date,
+                    EndDate = CourseEnd.Date,
+                    Notes = NotesEntry.Text
+                };
+            }
 
             await App.Database.SaveCourse(course);
 

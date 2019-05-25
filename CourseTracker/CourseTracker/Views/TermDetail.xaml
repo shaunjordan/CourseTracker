@@ -2,10 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CourseTracker.Views.TermDetail">
-    <ContentPage.ToolbarItems>
-        
-        <ToolbarItem x:Name="AddCourse_TB" Text="Add Course" Activated="AddCourse_TB_Activated"></ToolbarItem>
-        <ToolbarItem x:Name="Delete_Term" Text="Delete Term"></ToolbarItem>
+    <ContentPage.ToolbarItems>        
+        <ToolbarItem x:Name="AddCourse_TB" Text="Add Course" Activated="AddCourse_TB_Activated"></ToolbarItem>        
     </ContentPage.ToolbarItems>
 
     <ListView x:Name="courseListView" ItemSelected="CourseListView_ItemSelected">

@@ -53,6 +53,7 @@ namespace CourseTracker.Data
 
         public Task<int> DeleteTerm(int termId)
         {
+            //TODO: prevent deletion if courses are attached
             return database.DeleteAsync<Term>(termId);
         }
 
@@ -66,6 +67,11 @@ namespace CourseTracker.Data
             {
                 return database.InsertAsync(course);
             }
+        }
+
+        public Task<int> DeleteCourse(int courseId)
+        {
+            return database.DeleteAsync<Course>(courseId);
         }
 
     }
