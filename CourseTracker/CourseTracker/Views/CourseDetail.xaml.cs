@@ -25,5 +25,10 @@ namespace CourseTracker.Views
 
             course_id = courseId;
         }
+
+        async void AddAssessment_TB_Activated(object sender, EventArgs e)
+        {
+           await Navigation.PushModalAsync(new AddAssessment(course_id));
+        }
     }
 }

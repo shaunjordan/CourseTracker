@@ -19,14 +19,12 @@ namespace CourseTracker.Views
 		public TermDetail ()
 		{
 			InitializeComponent ();
-
 		}
 
         public TermDetail(int termId)
         {
             InitializeComponent();
-            term_id = termId;
-            
+            term_id = termId;            
         }
 
         async void CourseListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

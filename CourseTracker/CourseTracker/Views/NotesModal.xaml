@@ -1,13 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CourseTracker.Views.CourseDetail">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="AddAssessment_TB" Text="Add Assessment" Activated="AddAssessment_TB_Activated"></ToolbarItem>
-    </ContentPage.ToolbarItems>
+             x:Class="CourseTracker.Views.NotesModal">
     <ContentPage.Content>
         <StackLayout>
-            
+            <Label x:Name="notesLabel" Text="Boulibase"/>
+            <Button x:Name="ExitNotes" Text="Back"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

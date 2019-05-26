@@ -14,8 +14,8 @@ namespace CourseTracker.Models
 
         public string AssessmentType { get; set; }
 
-        public DateTime StartDate { get; set; }
+        public DateTime AssessmentStartDate { get; set; }
 
-        public DateTime EndDate { get; set; }
+        public DateTime AssessmentEndDate { get; set; }
     }
 }

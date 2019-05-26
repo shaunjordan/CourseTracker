@@ -31,11 +31,13 @@ namespace CourseTracker.Views
         async void DeleteCourse_Clicked(object sender, EventArgs e)
         {
             await App.Database.DeleteCourse(courseId);
+
+            await Navigation.PopAsync();
         }
 
-        private void ViewNotes_Clicked(object sender, EventArgs e)
+        async void ViewNotes_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushModalAsync(new NotesModal(courseId));
         }
 
         async void EditCourseDetails_Clicked(object sender, EventArgs e)
