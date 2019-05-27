@@ -15,6 +15,7 @@ namespace CourseTracker.Views
 	{
 
         int course_id;
+        int assessment_id;
 
 		public AddAssessment (int courseId)
 		{

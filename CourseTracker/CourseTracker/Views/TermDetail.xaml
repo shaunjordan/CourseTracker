@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CourseTracker.Views;assembly=CourseTracker"
              x:Class="CourseTracker.Views.TermDetail">
     <ContentPage.ToolbarItems>        
         <ToolbarItem x:Name="AddCourse_TB" Text="Add Course" Activated="AddCourse_TB_Activated"></ToolbarItem>        
@@ -9,11 +10,13 @@
     <ListView x:Name="courseListView" ItemSelected="CourseListView_ItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <ViewCell>
+                <local:TermDetailCustom CourseName="{Binding CourseName}"/>
+                <!--<ViewCell>
                     <StackLayout>
-                        <Label Text="{Binding CourseName}"/>                        
+                        <Label Text="{Binding CourseName}"/>
+                        <Label Text="{Binding InstructorName}"/>
                     </StackLayout>
-                </ViewCell>
+                </ViewCell>-->
             </DataTemplate>
         </ListView.ItemTemplate>        
     </ListView>
