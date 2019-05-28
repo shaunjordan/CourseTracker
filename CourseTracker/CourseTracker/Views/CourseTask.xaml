@@ -15,7 +15,7 @@
                     BorderRadius="5"/>
             <Button x:Name="ViewNotes"
                     Clicked="ViewNotes_Clicked"
-                    Text="View Notes"
+                    Text="View/Share Notes"
                     BorderRadius="5"/>
             <Button x:Name="DeleteCourse"
                     Clicked="DeleteCourse_Clicked"

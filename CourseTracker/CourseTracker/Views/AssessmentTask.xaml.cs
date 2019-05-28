@@ -16,5 +16,25 @@ namespace CourseTracker.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void BackButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteAssessment_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditAssessmentDetails_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ViewAssessmentDetails_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

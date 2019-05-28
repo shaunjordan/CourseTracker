@@ -27,7 +27,7 @@ namespace CourseTracker.Droid
             TermDetailCustom = cell;
 
             var view = (context as Activity).LayoutInflater.Inflate(Resource.Layout.NativeAndroidCell, null);
-            HeadingTextView = view.FindViewById<TextView>(Resource.Id.HeadingText);
+            //HeadingTextView = view.FindViewById<TextView>(Resource.Id.HeadingText);
 
             AddView(view);
         }

@@ -7,16 +7,17 @@
         <ToolbarItem x:Name="AddCourse_TB" Text="Add Course" Activated="AddCourse_TB_Activated"></ToolbarItem>        
     </ContentPage.ToolbarItems>
 
-    <ListView x:Name="courseListView" ItemSelected="CourseListView_ItemSelected">
+    <ListView x:Name="courseListView" ItemSelected="CourseListView_ItemSelected" HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <local:TermDetailCustom CourseName="{Binding CourseName}"/>
-                <!--<ViewCell>
+                <!--<local:TermDetailCustom CourseName="{Binding CourseName}"/>-->
+                <ViewCell>
                     <StackLayout>
                         <Label Text="{Binding CourseName}"/>
                         <Label Text="{Binding InstructorName}"/>
+                        <Label Text="{Binding InstructorPhone}"/>
                     </StackLayout>
-                </ViewCell>-->
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>        
     </ListView>
