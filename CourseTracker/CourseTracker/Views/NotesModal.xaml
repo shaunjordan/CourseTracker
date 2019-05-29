@@ -4,8 +4,9 @@
              x:Class="CourseTracker.Views.NotesModal">
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="notesLabel" Text="Boulibase"/>
-            <Button x:Name="ExitNotes" Text="Back"/>
+            <Label x:Name="notesLabel"/>
+            <Button x:Name="ShareNotes" Text="Share Notes" Clicked="ShareNotes_Clicked"/>
+            <Button x:Name="ExitNotes" Text="Back" Clicked="ExitNotes_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

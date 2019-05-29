@@ -14,6 +14,7 @@ namespace CourseTracker.Views
 	public partial class NotesModal : ContentPage
 	{
         int courseId;
+        string noteValue;
 
 		public NotesModal (int course_id)
 		{
@@ -27,7 +28,19 @@ namespace CourseTracker.Views
         {
             base.OnAppearing();
 
-            //notesLabel.SetValue = App.Database.GetNotes();
+            noteValue = App.Database.GetNotes(courseId);
+
+            notesLabel.Text = noteValue;
+        }
+
+        async void ShareNotes_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        async void ExitNotes_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
         }
     }
 }
