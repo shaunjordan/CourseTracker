@@ -19,6 +19,8 @@ namespace CourseTracker.Data
             database.CreateTableAsync<Term>().Wait();
 
             database.CreateTableAsync<Course>().Wait();
+
+            database.CreateTableAsync<Assessment>().Wait();
         }
 
         public Task<List<Term>> GetTerms()
@@ -53,6 +55,7 @@ namespace CourseTracker.Data
 
         public Task<int> DeleteTerm(int termId)
         {
+            //TODO: prevent deletion if courses are attached
             return database.DeleteAsync<Term>(termId);
         }
 
@@ -65,6 +68,30 @@ namespace CourseTracker.Data
             else
             {
                 return database.InsertAsync(course);
+            }
+        }
+
+        public Task<int> DeleteCourse(int courseId)
+        {
+            return database.DeleteAsync<Course>(courseId);
+        }
+
+        public Task<List<Course>> GetNotes(int courseId)
+        {
+            var notes = database.QueryAsync<Course>("SELECT Notes FROM Course WHERE CourseId = ?", courseId);
+            
+            return notes;
+        }
+
+        public Task<int> SaveAssessment(Assessment assessment)
+        {
+            if (assessment.AssessmentId != 0)
+            {
+                return database.UpdateAsync(assessment);
+            }
+            else
+            {
+                return database.InsertAsync(assessment);
             }
         }
 
