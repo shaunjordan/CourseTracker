@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CourseTracker.ViewModel
 {
-    public class NotesViewModel : INotifyPropertyChanged
+    public class NotesViewModel //: INotifyPropertyChanged
     {
 
         public NotesViewModel()
@@ -14,7 +14,7 @@ namespace CourseTracker.ViewModel
 
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        //public event PropertyChangedEventHandler PropertyChanged;
 
         //public ObservableCollection<>
     }
