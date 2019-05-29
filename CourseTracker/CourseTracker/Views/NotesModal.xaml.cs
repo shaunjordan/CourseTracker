@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CourseTracker.Data;
+using CourseTracker.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,12 +16,16 @@ namespace CourseTracker.Views
 	public partial class NotesModal : ContentPage
 	{
         int courseId;
+        string noteValue;
 
 		public NotesModal (int course_id)
 		{
 			InitializeComponent ();
 
             courseId = course_id;
+
+            //BindingContext = new NotesViewModel();
+            BindingContext = App.Database.GetNotes(course_id);
             
 		}
 
@@ -27,7 +33,19 @@ namespace CourseTracker.Views
         {
             base.OnAppearing();
 
-            //notesLabel.SetValue = App.Database.GetNotes();
+            noteValue = App.Database.GetNotes(courseId);
+
+            notesLabel.Text = noteValue;
+        }
+
+        async void ExitNotes_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
+
+        async void ShareNoteButton_Clicked(object sender, EventArgs e)
+        {
+        
         }
     }
 }

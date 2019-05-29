@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using SQLite;
@@ -76,11 +77,12 @@ namespace CourseTracker.Data
             return database.DeleteAsync<Course>(courseId);
         }
 
-        public Task<List<Course>> GetNotes(int courseId)
+        public string GetNotes(int courseId)
         {
-            var notes = database.QueryAsync<Course>("SELECT Notes FROM Course WHERE CourseId = ?", courseId);
             
-            return notes;
+            var notes = database.QueryAsync<Course>("SELECT Notes FROM Course WHERE CourseId = ?", courseId).Result;
+      
+            return notes[0].Notes.ToString();
         }
 
         public Task<int> SaveAssessment(Assessment assessment)
