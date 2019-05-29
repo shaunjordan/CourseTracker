@@ -19,27 +19,26 @@ namespace CourseTracker.Views
 		public TermDetail ()
 		{
 			InitializeComponent ();
-
 		}
 
         public TermDetail(int termId)
         {
             InitializeComponent();
-            term_id = termId;
-            
+            term_id = termId;            
         }
 
         async void CourseListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var courseItem = e.SelectedItem as Course;
 
-            await Navigation.PushAsync(new CourseDetail(courseItem.CourseId));
+            await Navigation.PushAsync(new CourseTask(term_id, courseItem.CourseId));
             
         }
 
         async void AddCourse_TB_Activated(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new AddCourse(term_id));
+            //Pass in zero for to create a new Course
+            await Navigation.PushModalAsync(new AddCourse(term_id, 0));
         }
 
         protected override async void OnAppearing()

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseTracker.Views.AssessmentTask">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button x:Name="ViewAssessmentDetails"
+                    Clicked="ViewAssessmentDetails_Clicked"
+                    Text="View Details"
+                    BorderRadius="5"/>
+            <Button x:Name="EditAssessmentDetails"
+                    Clicked="EditAssessmentDetails_Clicked"
+                    Text="Edit Assessment"
+                    BorderRadius="5"/>            
+            <Button x:Name="DeleteAssessment"
+                    Clicked="DeleteAssessment_Clicked"
+                    Text="Delete Assessment"
+                    BorderRadius="5"/>
+            <Button x:Name="BackButton" 
+                    Clicked="BackButton_Clicked"
+                    Text="Back"
+                    BorderRadius="5"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

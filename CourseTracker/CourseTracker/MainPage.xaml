@@ -8,13 +8,17 @@
         <ToolbarItem x:Name="AddTerm_TB" Text="Add Term" Activated="AddTerm_TB_Activated"></ToolbarItem>        
     </ContentPage.ToolbarItems>
 
-    <ListView x:Name="termListView" ItemSelected="TermListView_ItemSelected">
+    <ListView x:Name="termListView" ItemSelected="TermListView_ItemSelected" HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout>
-                        <Label Text="{Binding TermName}"/>
-                    </StackLayout>
+                    <ViewCell.View>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding TermName}"/>
+                            <Label FontSize="Micro" Text="{Binding TermStart}"/>
+                            <Label FontSize="Micro" Text="{Binding TermEnd}"/>
+                        </StackLayout>
+                    </ViewCell.View>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>

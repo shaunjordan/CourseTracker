@@ -9,6 +9,7 @@
                 <Entry x:Name="InstrNameEntry" Placeholder="Enter Instructor Name"/>
                 <Entry x:Name="InstrPhoneEntry" Placeholder="Enter Instructor Phone"/>
                 <Entry x:Name="InstrEmailEntry" Placeholder="Enter Instructor Email"/>
+                <Label Text="Course Status" FontSize="Micro"/>
                 <Picker x:Name="StatusPicker">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
