@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using Xamarin.Essentials;
 
 namespace CourseTracker.Views
 {
@@ -35,7 +35,11 @@ namespace CourseTracker.Views
 
         async void ShareNotes_Clicked(object sender, EventArgs e)
         {
-
+            await Share.RequestAsync(new ShareTextRequest
+            {
+                Text = noteValue,
+                Title = "Class Notes"
+            });
         }
 
         async void ExitNotes_Clicked(object sender, EventArgs e)

@@ -20,9 +20,17 @@ namespace CourseTracker.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            //Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
             LoadApplication(new App());
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
+        {
+
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }
