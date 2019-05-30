@@ -71,8 +71,16 @@ namespace CourseTracker.Data
             }
         }
 
+        public List<Course> GetCourseDetails(int courseId)
+        {
+            var courseDetails = database.QueryAsync<Course>("SELECT * FROM Course WHERE CourseId = ?", courseId).Result;
+
+            return courseDetails;
+        }
+
         public Task<int> DeleteCourse(int courseId)
         {
+            //TODO: if assessments exists, cannot delete
             return database.DeleteAsync<Course>(courseId);
         }
 
