@@ -11,9 +11,12 @@
                 <ViewCell>
                     <ViewCell.View>
                         <StackLayout Padding="10">
+                            <Label FontSize="Micro" Text="Course Name"/>
                             <Label Text="{Binding CourseName}"/>
                             <Label FontSize="Micro" Text="Instuctor Name"/>
                             <Label Text="{Binding InstructorName}"/>
+                            <Label FontSize="Micro" Text="Instuctor Phone"/>
+                            <Label Text="{Binding InstructorPhone}"/>
                         </StackLayout>
                     </ViewCell.View>
                 </ViewCell>

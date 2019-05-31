@@ -25,8 +25,7 @@ namespace CourseTracker.Views
             InitializeComponent();
 
             course_id = courseId;
-
-            BindingContext = new CourseDetailViewModel(courseId);
+                     
         }
 
         async void AddAssessment_TB_Activated(object sender, EventArgs e)
