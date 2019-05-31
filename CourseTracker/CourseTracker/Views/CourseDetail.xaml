@@ -5,26 +5,19 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="AddAssessment_TB" Text="Add Assessment" Activated="AddAssessment_TB_Activated"></ToolbarItem>
     </ContentPage.ToolbarItems>
-    <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Padding="10,10,0,0">
-                <Label Text="Course Name" FontSize="Micro"/>
-                <Label x:Name="CourseName" FontSize="Small"/>
-                <Label Text="Course Instructor Name" FontSize="Micro"/>
-                <Label x:Name="InstructorName" FontSize="Small"/>
-                <Label Text="Course Instructor Phone" FontSize="Micro"/>
-                <Label x:Name="InstructorPhone" FontSize="Small"/>
-                <Label Text="Course Instructor Email" FontSize="Micro"/>
-                <Label x:Name="InstructorEmail" FontSize="Small"/>
-                <Label Text="Course Status" FontSize="Micro"/>
-                <Label x:Name="Status" FontSize="Small"/>
-                <Label Text="Notes" FontSize="Micro"/>
-                <Label x:Name="CourseNotes" FontSize="Small"/>
-                <Label Text="Course Start Date" FontSize="Micro"/>
-                <Label x:Name="StartDate" FontSize="Small"/>
-                <Label Text="Course End Date" FontSize="Micro"/>
-                <Label x:Name="EndDate" FontSize="Small"/>
-            </StackLayout>
-        </ScrollView>
-    </ContentPage.Content>
+    <ListView x:Name="courseDetail" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding CourseName}"/>
+                            <Label FontSize="Micro" Text="Instuctor Name"/>
+                            <Label Text="{Binding InstructorName}"/>
+                        </StackLayout>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

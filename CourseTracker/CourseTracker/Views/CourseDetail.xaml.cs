@@ -25,6 +25,8 @@ namespace CourseTracker.Views
             InitializeComponent();
 
             course_id = courseId;
+
+            BindingContext = new CourseDetailViewModel(courseId);
         }
 
         async void AddAssessment_TB_Activated(object sender, EventArgs e)
@@ -36,13 +38,15 @@ namespace CourseTracker.Views
         {
             base.OnAppearing();
 
-            CourseName.Text = App.Database.GetCourseDetails(course_id)[0].CourseName;
-            InstructorName.Text = App.Database.GetCourseDetails(course_id)[0].InstructorName;
-            InstructorPhone.Text = App.Database.GetCourseDetails(course_id)[0].InstructorPhone;
-            InstructorEmail.Text = App.Database.GetCourseDetails(course_id)[0].InstructorEmail;
-            Status.Text = App.Database.GetCourseDetails(course_id)[0].Status;
-            CourseNotes.Text = App.Database.GetCourseDetails(course_id)[0].Notes;
-            StartDate.Text = App.Database.GetCourseDetails(course_id)[0].StartDate.ToShortDateString();
+            courseDetail.ItemsSource = new CourseDetailViewModel(course_id).GetCourseDetail();
+
+            //CourseName.Text = App.Database.GetCourseDetails(course_id)[0].CourseName;
+            //InstructorName.Text = App.Database.GetCourseDetails(course_id)[0].InstructorName;
+            //InstructorPhone.Text = App.Database.GetCourseDetails(course_id)[0].InstructorPhone;
+            //InstructorEmail.Text = App.Database.GetCourseDetails(course_id)[0].InstructorEmail;
+            //Status.Text = App.Database.GetCourseDetails(course_id)[0].Status;
+            //CourseNotes.Text = App.Database.GetCourseDetails(course_id)[0].Notes;
+            //StartDate.Text = App.Database.GetCourseDetails(course_id)[0].StartDate.ToShortDateString();
         }
     }
 }

@@ -8,13 +8,23 @@ namespace CourseTracker.ViewModel
     public class CourseDetailViewModel
     {
 
-        //List<Course> CourseDetail = App.Database.GetCourseDetails();
+        int course_id;
+       
+        List<Course> CourseDetail;
 
-        public CourseDetailViewModel()
+        public CourseDetailViewModel(int courseId)
         {
+            this.course_id = courseId;            
 
+            GetCourseDetail();
         }
 
+        public List<Course> GetCourseDetail()
+        {
+            CourseDetail = App.Database.GetCourseDetails(this.course_id);
+
+            return CourseDetail;
+        }
 
     }
 }
