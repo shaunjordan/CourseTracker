@@ -19,7 +19,7 @@ namespace CourseTracker.ViewModel
             GetCourseDetail();
         }
 
-        string cname = "HotGums";
+        
 
         public List<Course> GetCourseDetail()
         {
@@ -30,9 +30,23 @@ namespace CourseTracker.ViewModel
 
         public string CourseName
         {
-            get { return CourseDetail[0].CourseName;  }
-            set { cname = value;  }
+            get { return CourseDetail[0].CourseName; }
+            
         }
 
+        public string InstructorName
+        {
+            get { return CourseDetail[0].InstructorName; }
+        }
+
+        public string InstructorPhone
+        {
+            get { return CourseDetail[0].InstructorPhone; }
+        }
+
+        public string InstructorEmail
+        {
+            get { return CourseDetail[0].InstructorEmail; }
+        }
     }
 }

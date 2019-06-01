@@ -5,9 +5,9 @@
     <ContentPage.Content>
         <StackLayout x:Name="courseEntryLines">
             <Entry x:Name="CourseNameEntry" Placeholder="Enter Course Name" Text="{Binding CourseName}"/>
-            <Entry x:Name="InstrNameEntry" Placeholder="Enter Instructor Name"/>
-            <Entry x:Name="InstrPhoneEntry" Placeholder="Enter Instructor Phone"/>
-            <Entry x:Name="InstrEmailEntry" Placeholder="Enter Instructor Email"/>
+            <Entry x:Name="InstrNameEntry" Placeholder="Enter Instructor Name" Text="{Binding InstructorName}"/>
+            <Entry x:Name="InstrPhoneEntry" Placeholder="Enter Instructor Phone" Text="{Binding InstructorPhone}"/>
+            <Entry x:Name="InstrEmailEntry" Placeholder="Enter Instructor Email" Text="{Binding InstructorEmail}"/>
             <Label Text="Course Status" FontSize="Micro"/>
             <Picker x:Name="StatusPicker">
                 <Picker.ItemsSource>
