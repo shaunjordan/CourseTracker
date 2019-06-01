@@ -17,6 +17,14 @@
                             <Label Text="{Binding InstructorName}"/>
                             <Label FontSize="Micro" Text="Instuctor Phone"/>
                             <Label Text="{Binding InstructorPhone}"/>
+                            <Label FontSize="Micro" Text="Instuctor Email"/>
+                            <Label Text="{Binding InstructorEmail}"/>
+                            <Label FontSize="Micro" Text="Course Status"/>
+                            <Label Text="{Binding Status}"/>
+                            <Label FontSize="Micro" Text="Course Start Date"/>
+                            <Label Text="{Binding StartDate}"/>
+                            <Label FontSize="Micro" Text="Course End Date"/>
+                            <Label Text="{Binding EndDate}"/>
                         </StackLayout>
                     </ViewCell.View>
                 </ViewCell>

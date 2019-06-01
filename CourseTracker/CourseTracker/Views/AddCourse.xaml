@@ -3,38 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CourseTracker.Views.AddCourse">
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout>
-                <Entry x:Name="CourseNameEntry" Placeholder="Enter Course Name"/>
-                <Entry x:Name="InstrNameEntry" Placeholder="Enter Instructor Name"/>
-                <Entry x:Name="InstrPhoneEntry" Placeholder="Enter Instructor Phone"/>
-                <Entry x:Name="InstrEmailEntry" Placeholder="Enter Instructor Email"/>
-                <Label Text="Course Status" FontSize="Micro"/>
-                <Picker x:Name="StatusPicker">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Planned</x:String>
-                            <x:String>In Progress</x:String>                            
-                            <x:String>Completed</x:String>
-                            <x:String>Dropped</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
-                <Label Text="Course Start Date" FontSize="Small"/>
-                <DatePicker x:Name="CourseStart" 
-                            MinimumDate="01/01/2019"
-                            MaximumDate="12/31/2050"
-                            Date="01/01/2019">
-                </DatePicker>
-                <Label Text="Course End Date" FontSize="Small"/>
-                <DatePicker x:Name="CourseEnd" 
-                            MinimumDate="01/01/2019"
-                            MaximumDate="12/31/2050"
-                            Date="01/01/2019">
-                </DatePicker>
-                <Entry x:Name="NotesEntry" Placeholder="Enter Notes"/>
-                <Button x:Name="SaveCourseButton" Text="Save" Clicked="SaveCourseButton_Clicked"/>
-            </StackLayout>
-        </ScrollView>
+        <StackLayout x:Name="courseEntryLines">
+            <Entry x:Name="CourseNameEntry" Placeholder="Enter Course Name" Text="{Binding CourseName}"/>
+            <Entry x:Name="InstrNameEntry" Placeholder="Enter Instructor Name"/>
+            <Entry x:Name="InstrPhoneEntry" Placeholder="Enter Instructor Phone"/>
+            <Entry x:Name="InstrEmailEntry" Placeholder="Enter Instructor Email"/>
+            <Label Text="Course Status" FontSize="Micro"/>
+            <Picker x:Name="StatusPicker">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Planned</x:String>
+                        <x:String>In Progress</x:String>
+                        <x:String>Completed</x:String>
+                        <x:String>Dropped</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Label Text="Course Start Date" FontSize="Small"/>
+            <DatePicker x:Name="CourseStart" 
+    MinimumDate="01/01/2019"
+    MaximumDate="12/31/2050"
+    Date="01/01/2019">
+            </DatePicker>
+            <Label Text="Course End Date" FontSize="Small"/>
+            <DatePicker x:Name="CourseEnd" 
+    MinimumDate="01/01/2019"
+    MaximumDate="12/31/2050"
+    Date="01/01/2019">
+            </DatePicker>
+            <Entry x:Name="NotesEntry" Placeholder="Enter Notes"/>
+            <Button x:Name="SaveCourseButton" Text="Save" Clicked="SaveCourseButton_Clicked"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -19,11 +19,19 @@ namespace CourseTracker.ViewModel
             GetCourseDetail();
         }
 
+        string cname = "HotGums";
+
         public List<Course> GetCourseDetail()
         {
             CourseDetail = App.Database.GetCourseDetails(this.course_id);
 
             return CourseDetail;
+        }
+
+        public string CourseName
+        {
+            get { return CourseDetail[0].CourseName;  }
+            set { cname = value;  }
         }
 
     }

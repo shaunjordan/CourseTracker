@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using CourseTracker.Models;
+using CourseTracker.ViewModel;
 
 namespace CourseTracker.Views
 {
@@ -26,6 +27,12 @@ namespace CourseTracker.Views
             InitializeComponent();
             termId = term_id;
             courseId = course_id;
+
+            //Load AddCourse page without Data Binding
+            if (course_id != 0)
+            {
+                BindingContext = new CourseDetailViewModel(course_id);
+            }
         }
 
         async void SaveCourseButton_Clicked(object sender, EventArgs e)
@@ -67,6 +74,12 @@ namespace CourseTracker.Views
             await App.Database.SaveCourse(course);
 
             await Navigation.PopModalAsync();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
         }
     }
 }
