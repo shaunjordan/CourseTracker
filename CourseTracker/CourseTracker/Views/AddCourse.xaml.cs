@@ -28,7 +28,7 @@ namespace CourseTracker.Views
             termId = term_id;
             courseId = course_id;
 
-            //Load AddCourse page without Data Binding
+            //Load AddCourse page with Data Binding
             if (course_id != 0)
             {
                 BindingContext = new CourseDetailViewModel(course_id);
@@ -39,6 +39,7 @@ namespace CourseTracker.Views
         {
             Course course;
 
+            //If ID is 0, create new course, otherwise update the course
             if (courseId == 0)
             {
                 course = new Course()

@@ -10,13 +10,28 @@ namespace CourseTracker.ViewModel
 {
     public class TermViewModel
     {
-        //readonly ObservableCollection<Term> TermsList;
 
-        //async Task<ObservableCollection<Term>> GetTermsAsync()
+        List<Term> TermDetail;
+
+        public TermViewModel()
+        {
+            GetTermDetail();
+        }
+
+        public List<Term> GetTermDetail()
+        {
+            TermDetail = App.Database.Get_Terms();
+
+            return TermDetail;
+        }
+
+        //public string TermName
         //{
-        //    //await termsList = App.Database.GetTerms();
+        //    //get { return TermDetail.ForEach(t => t.TermName = TermName); }
+        //    get
+        //    {
+        //        return TermDetail.
+        //    }
         //}
-
-
     }
 }

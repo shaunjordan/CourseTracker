@@ -24,7 +24,7 @@ namespace CourseTracker.Views
         {
             InitializeComponent();
 
-            course_id = courseId;
+            course_id = courseId;            
                      
         }
 

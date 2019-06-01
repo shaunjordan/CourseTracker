@@ -19,8 +19,6 @@ namespace CourseTracker.ViewModel
             GetCourseDetail();
         }
 
-        
-
         public List<Course> GetCourseDetail()
         {
             CourseDetail = App.Database.GetCourseDetails(this.course_id);
@@ -30,8 +28,7 @@ namespace CourseTracker.ViewModel
 
         public string CourseName
         {
-            get { return CourseDetail[0].CourseName; }
-            
+            get { return CourseDetail[0].CourseName; }            
         }
 
         public string InstructorName
