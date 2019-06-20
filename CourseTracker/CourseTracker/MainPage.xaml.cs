@@ -36,5 +36,10 @@ namespace CourseTracker
         {
             await Navigation.PushModalAsync(new AddTerm());
         }
+
+        public void Delete_Activated(object sender, EventArgs e)
+        {
+            App.Database.DeleteTables();
+        }
     }
 }

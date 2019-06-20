@@ -10,7 +10,7 @@
                 <Entry x:Name="InstrPhoneEntry" Placeholder="Enter Instructor Phone" Text="{Binding InstructorPhone}"/>
                 <Entry x:Name="InstrEmailEntry" Placeholder="Enter Instructor Email" Text="{Binding InstructorEmail}"/>
                 <Label Text="Course Status" FontSize="Micro"/>
-                <Picker ItemsSource="{Binding Status}" x:Name="StatusPicker">
+                <Picker x:Name="StatusPicker">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Planned</x:String>
@@ -23,14 +23,12 @@
                 <Label Text="Course Start Date" FontSize="Small"/>
                 <DatePicker x:Name="CourseStart" 
     MinimumDate="01/01/2019"
-    MaximumDate="12/31/2050"
-    Date="{Binding StartDate}">
+    MaximumDate="12/31/2050">
                 </DatePicker>
                 <Label Text="Course End Date" FontSize="Small"/>
                 <DatePicker x:Name="CourseEnd" 
     MinimumDate="01/01/2019"
-    MaximumDate="12/31/2050"
-    Date="{Binding EndDate}">
+    MaximumDate="12/31/2050">
                 </DatePicker>
                 <Entry x:Name="NotesEntry" Placeholder="Enter Notes"/>
                 <Button x:Name="SaveCourseButton" Text="Save" Clicked="SaveCourseButton_Clicked"/>

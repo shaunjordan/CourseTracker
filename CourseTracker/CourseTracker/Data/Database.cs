@@ -21,6 +21,7 @@ namespace CourseTracker.Data
             database.CreateTableAsync<Course>().Wait();
 
             database.CreateTableAsync<Assessment>().Wait();
+           
         }
 
         public Task<List<Term>> GetTerms()
@@ -33,6 +34,13 @@ namespace CourseTracker.Data
             var termData = database.QueryAsync<Term>("SELECT * FROM Term").Result;
 
             return termData;
+        }
+
+        public List<Term> GetTermDetail(int termId)
+        {
+            var termDetails = database.QueryAsync<Term>("SELECT * FROM Term WHERE TermId = ?", termId).Result;
+
+            return termDetails;
         }
 
         //maybe get a string instead
@@ -76,7 +84,7 @@ namespace CourseTracker.Data
             {
                 return database.InsertAsync(course);
             }
-        }
+        }        
 
         public List<Course> GetCourseDetails(int courseId)
         {
@@ -108,6 +116,15 @@ namespace CourseTracker.Data
             {
                 return database.InsertAsync(assessment);
             }
+        }
+
+        //Throwaway function to clear the databases
+        public void DeleteTables()
+        {
+            database.DeleteAllAsync<Course>().Wait();
+
+            database.DeleteAllAsync<Term>().Wait();
+            
         }
 
     }

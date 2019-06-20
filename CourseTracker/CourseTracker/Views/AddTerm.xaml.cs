@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using CourseTracker.Models;
+using CourseTracker.ViewModel;
 
 namespace CourseTracker.Views
 {
@@ -23,8 +24,12 @@ namespace CourseTracker.Views
         public AddTerm(int termId)
         {
             InitializeComponent();
-
             term_id = termId;
+
+            if (termId != 0)
+            {
+                BindingContext = new TermViewModel(term_id);
+            }
         }
 
         async void SaveTermButton_Clicked(object sender, EventArgs e)
@@ -36,8 +41,8 @@ namespace CourseTracker.Views
                 term = new Term()
                 {
                     TermName = TermNameEntry.Text,
-                    TermStart = TermStart.Date,
-                    TermEnd = TermEnd.Date
+                    TermStart = TermStart.Date.ToString("MM/dd/yyyy"),
+                    TermEnd = TermEnd.Date.ToString("MM/dd/yyyy")
                 };
 
             }
@@ -47,8 +52,8 @@ namespace CourseTracker.Views
                 {
                     TermId = term_id,
                     TermName = TermNameEntry.Text,
-                    TermStart = TermStart.Date,
-                    TermEnd = TermEnd.Date
+                    TermStart = TermStart.Date.ToString("MM/dd/yyyy"),
+                    TermEnd = TermEnd.Date.ToString("MM/dd/yyyy")
                 };
             }
 

@@ -12,9 +12,13 @@ namespace CourseTracker.Models
 
         public string TermName { get; set; }
 
-        public DateTime TermStart { get; set; }
+        //public DateTime TermStart { get; set; }
 
-        public DateTime TermEnd { get; set; }
+        //public DateTime TermEnd { get; set; }
+
+        public string TermStart { get; set; }
+
+        public string TermEnd { get; set; }
 
     }
 

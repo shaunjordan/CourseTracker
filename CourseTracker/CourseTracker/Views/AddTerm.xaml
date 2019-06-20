@@ -4,18 +4,18 @@
              x:Class="CourseTracker.Views.AddTerm">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="TermNameEntry" Placeholder="Enter Term Name"/>
+            <Entry x:Name="TermNameEntry" Placeholder="Enter Term Name" Text="{Binding TermName}"/>
             <Label Text="Term Start Date" FontSize="Medium"/>
             <DatePicker x:Name="TermStart" 
                             MinimumDate="01/01/2019"
                             MaximumDate="12/31/2050"
-                            Date="01/01/2019">
+                            Date="{Binding TermStart}">
             </DatePicker>
             <Label Text="Term End Date" FontSize="Small"/>
             <DatePicker x:Name="TermEnd" 
                             MinimumDate="01/01/2019"
                             MaximumDate="12/31/2050"
-                            Date="01/01/2019">
+                            Date="{Binding TermEnd}">
             </DatePicker>
             <Button x:Name="SaveTermButton" Text="Save" Clicked="SaveTermButton_Clicked"/>
         </StackLayout>

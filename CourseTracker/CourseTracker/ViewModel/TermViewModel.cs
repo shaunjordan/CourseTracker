@@ -10,11 +10,14 @@ namespace CourseTracker.ViewModel
 {
     public class TermViewModel
     {
-
+        int term_id;
+        
         List<Term> TermDetail;
 
-        public TermViewModel()
+        public TermViewModel(int termId)
         {
+            this.term_id = termId;
+
             GetTermDetail();
         }
 
@@ -25,13 +28,19 @@ namespace CourseTracker.ViewModel
             return TermDetail;
         }
 
-        //public string TermName
-        //{
-        //    //get { return TermDetail.ForEach(t => t.TermName = TermName); }
-        //    get
-        //    {
-        //        return TermDetail.
-        //    }
-        //}
+        public string TermName
+        {
+            get { return TermDetail[0].TermName; }
+        }
+
+        public string TermStart
+        {
+            get { return TermDetail[0].TermStart; }
+        }
+
+        public string TermEnd
+        {
+            get { return TermDetail[0].TermEnd; }
+        }
     }
 }
