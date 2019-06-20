@@ -50,8 +50,8 @@ namespace CourseTracker.Views
                     InstructorPhone = InstrPhoneEntry.Text,
                     InstructorEmail = InstrEmailEntry.Text,
                     Status = StatusPicker.SelectedItem.ToString(),
-                    StartDate = CourseStart.Date,
-                    EndDate = CourseEnd.Date,
+                    StartDate = CourseStart.Date.ToString("MM/dd/yyyy"),
+                    EndDate = CourseEnd.Date.ToString("MM/dd/yyyy"),
                     Notes = NotesEntry.Text
                 };
             }
@@ -66,8 +66,8 @@ namespace CourseTracker.Views
                     InstructorPhone = InstrPhoneEntry.Text,
                     InstructorEmail = InstrEmailEntry.Text,
                     Status = StatusPicker.SelectedItem.ToString(),
-                    StartDate = CourseStart.Date,
-                    EndDate = CourseEnd.Date,
+                    StartDate = CourseStart.Date.ToString("MM/dd/yyyy"),
+                    EndDate = CourseEnd.Date.ToString("MM/dd/yyyy"),
                     Notes = NotesEntry.Text
                 };
             }

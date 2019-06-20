@@ -29,13 +29,27 @@ namespace CourseTracker.Views
             Assessment assessment;
 
             //TODO: add the assessment id
-            assessment = new Assessment()
+            if (assessment_id == 0)
             {
-                AssessmentName = AssessmentNameEntry.Text,
-                AssessmentType = AssessmentType.SelectedItem.ToString(),
-                AssessmentStartDate = AssessmentStart.Date,
-                AssessmentEndDate = AssessmentEnd.Date
-            };
+                assessment = new Assessment()
+                {
+                    AssessmentName = AssessmentNameEntry.Text,
+                    AssessmentType = AssessmentType.SelectedItem.ToString(),
+                    AssessmentStartDate = AssessmentStart.Date.ToString("MM/dd/yyyy"),
+                    AssessmentEndDate = AssessmentEnd.Date.ToString("MM/dd/yyyy")
+                };
+            }
+            else
+            {
+                assessment = new Assessment()
+                {
+                    AssessmentId = assessment_id,
+                    AssessmentName = AssessmentNameEntry.Text,
+                    AssessmentType = AssessmentType.SelectedItem.ToString(),
+                    AssessmentStartDate = AssessmentStart.Date.ToString("MM/dd/yyyy"),
+                    AssessmentEndDate = AssessmentEnd.Date.ToString("MM/dd/yyyy")
+                };
+            }
 
             await App.Database.SaveAssessment(assessment);
         }

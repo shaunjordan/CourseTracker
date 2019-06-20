@@ -24,8 +24,7 @@ namespace CourseTracker.Views
         {
             InitializeComponent();
 
-            course_id = courseId;            
-                     
+            course_id = courseId;     
         }
 
         async void AddAssessment_TB_Activated(object sender, EventArgs e)

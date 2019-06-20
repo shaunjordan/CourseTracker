@@ -12,11 +12,16 @@
             <DataTemplate>
                 <!--<local:TermDetailCustom CourseName="{Binding CourseName}"/>-->
                 <ViewCell>
-                    <StackLayout>
-                        <Label Text="{Binding CourseName}"/>
-                        <Label Text="{Binding InstructorName}"/>
-                        <Label Text="{Binding InstructorPhone}"/>
-                    </StackLayout>
+                    <ViewCell.View>
+                        <StackLayout Spacing="5">
+                            <Label Text="{Binding CourseName}" FontSize="Micro"/>
+                            <Label Text="{Binding InstructorName}" FontSize="Micro"/>
+                            <Label Text="{Binding InstructorPhone}" FontSize="Micro"/>
+                            <Label Text="{Binding InstructorEmail}" FontSize="Micro"/>
+                            <Label Text="{Binding StartDate}" FontSize="Micro"/>
+                            <Label Text="{Binding EndDate}" FontSize="Micro"/>
+                        </StackLayout>
+                    </ViewCell.View>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>        

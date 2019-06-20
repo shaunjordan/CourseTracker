@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="TermNameEntry" Placeholder="Enter Term Name" Text="{Binding TermName}"/>
-            <Label Text="Term Start Date" FontSize="Medium"/>
+            <Label Text="Term Start Date" FontSize="Small"/>
             <DatePicker x:Name="TermStart" 
                             MinimumDate="01/01/2019"
                             MaximumDate="12/31/2050"

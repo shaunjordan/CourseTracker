@@ -46,9 +46,20 @@ namespace CourseTracker.ViewModel
             get { return CourseDetail[0].InstructorEmail; }
         }
 
-        public DateTime StartDate
+        public string StartDate
         {
             get { return CourseDetail[0].StartDate; }
         }
+
+        public string EndDate
+        {
+            get { return CourseDetail[0].EndDate; }
+        }
+
+        public string Notes
+        {
+            get { return CourseDetail[0].Notes; }
+        }
+
     }
 }
