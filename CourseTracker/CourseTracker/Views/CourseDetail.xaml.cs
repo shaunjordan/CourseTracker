@@ -29,7 +29,7 @@ namespace CourseTracker.Views
 
         async void AddAssessment_TB_Activated(object sender, EventArgs e)
         {
-           await Navigation.PushModalAsync(new AddAssessment(course_id));
+           await Navigation.PushModalAsync(new AddAssessment(course_id, 0));
         }
 
         protected override void OnAppearing()

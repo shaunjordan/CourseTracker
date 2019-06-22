@@ -49,5 +49,10 @@ namespace CourseTracker.Views
         {
             await Navigation.PushAsync(new CourseDetail(courseId));
         }
+
+        async void ViewAssessments_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AssessmentDetails(courseId));
+        }
     }
 }

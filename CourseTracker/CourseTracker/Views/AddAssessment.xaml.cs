@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using CourseTracker.Models;
+using CourseTracker.ViewModel;
 
 namespace CourseTracker.Views
 {
@@ -17,11 +18,17 @@ namespace CourseTracker.Views
         int course_id;
         int assessment_id;
 
-		public AddAssessment (int courseId)
+		public AddAssessment (int courseId, int assessmentId)
 		{
 			InitializeComponent ();
 
             course_id = courseId;
+            assessment_id = assessmentId;
+
+            if (assessment_id != 0)
+            {
+                BindingContext = new AssessmentViewModel(assessment_id);
+            }
 		}
 
         async void SaveAssessmentButton_Clicked(object sender, EventArgs e)
@@ -34,6 +41,7 @@ namespace CourseTracker.Views
                 assessment = new Assessment()
                 {
                     AssessmentName = AssessmentNameEntry.Text,
+                    CourseId = course_id,
                     AssessmentType = AssessmentType.SelectedItem.ToString(),
                     AssessmentStartDate = AssessmentStart.Date.ToString("MM/dd/yyyy"),
                     AssessmentEndDate = AssessmentEnd.Date.ToString("MM/dd/yyyy")
@@ -45,6 +53,7 @@ namespace CourseTracker.Views
                 {
                     AssessmentId = assessment_id,
                     AssessmentName = AssessmentNameEntry.Text,
+                    CourseId = course_id,
                     AssessmentType = AssessmentType.SelectedItem.ToString(),
                     AssessmentStartDate = AssessmentStart.Date.ToString("MM/dd/yyyy"),
                     AssessmentEndDate = AssessmentEnd.Date.ToString("MM/dd/yyyy")
@@ -52,6 +61,8 @@ namespace CourseTracker.Views
             }
 
             await App.Database.SaveAssessment(assessment);
+
+            await Navigation.PopModalAsync();
         }
     }
 }

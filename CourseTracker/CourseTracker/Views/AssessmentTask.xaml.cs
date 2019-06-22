@@ -17,9 +17,9 @@ namespace CourseTracker.Views
 			InitializeComponent ();
 		}
 
-        private void BackButton_Clicked(object sender, EventArgs e)
+        async void BackButton_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PopAsync();
         }
 
         private void DeleteAssessment_Clicked(object sender, EventArgs e)

@@ -8,9 +8,9 @@ namespace CourseTracker.Models
     {
         public int AssessmentId { get; set; }
 
-        public string AssessmentName { get; set; }
-
         public int CourseId { get; set; }
+
+        public string AssessmentName { get; set; }        
 
         public string AssessmentType { get; set; }
 

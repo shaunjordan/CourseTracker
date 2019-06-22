@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Entry x:Name="AssessmentNameEntry" Placeholder="Enter AssessmentName"/>                
+                <Entry x:Name="AssessmentNameEntry" Placeholder="Enter AssessmentName" Text="{Binding AssessmentName}"/>                
                 <Picker x:Name="AssessmentType">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
@@ -18,13 +18,13 @@
                 <DatePicker x:Name="AssessmentStart" 
                             MinimumDate="01/01/2019"
                             MaximumDate="12/31/2050"
-                            Date="01/01/2019">
+                            Date="{Binding AssessmentStartDate}">
                 </DatePicker>
                 <Label Text="Assessment End Date" FontSize="Small"/>
                 <DatePicker x:Name="AssessmentEnd" 
                             MinimumDate="01/01/2019"
                             MaximumDate="12/31/2050"
-                            Date="01/01/2019">
+                            Date="{Binding AssessmentEndDate}">
                 </DatePicker>                
                 <Button x:Name="SaveAssessmentButton" Text="Save" Clicked="SaveAssessmentButton_Clicked"/>
             </StackLayout>

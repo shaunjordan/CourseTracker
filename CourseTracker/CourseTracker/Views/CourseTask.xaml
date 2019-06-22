@@ -17,6 +17,10 @@
                     Clicked="ViewNotes_Clicked"
                     Text="View/Share Notes"
                     BorderRadius="5"/>
+            <Button x:Name="ViewAssessments"
+                    Clicked="ViewAssessments_Clicked"
+                    Text="View Assessment Details"
+                    BorderRadius="5"/>
             <Button x:Name="DeleteCourse"
                     Clicked="DeleteCourse_Clicked"
                     Text="Delete Course"

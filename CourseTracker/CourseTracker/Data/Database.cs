@@ -99,6 +99,13 @@ namespace CourseTracker.Data
             return database.DeleteAsync<Course>(courseId);
         }
 
+        public List<Assessment> GetAssessmentDetails(int assessmentId)
+        {
+            var assessmentDetails = database.QueryAsync<Assessment>("SELECT * FROM Assessment WHERE CourseId = ?", assessmentId).Result;
+
+            return assessmentDetails;
+        }
+
         public string GetNotes(int courseId)
         {
             var notes = database.QueryAsync<Course>("SELECT Notes FROM Course WHERE CourseId = ?", courseId).Result;
