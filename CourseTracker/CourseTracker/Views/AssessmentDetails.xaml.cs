@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using CourseTracker.ViewModel;
+using CourseTracker.Models;
 
 namespace CourseTracker.Views
 {
@@ -30,5 +31,11 @@ namespace CourseTracker.Views
             assessmentDetails.ItemsSource = new AssessmentViewModel(course_id).GetAssessmentDetail(); ;
         }
 
+        async void AssessmentDetails_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var assessmentItem = e.SelectedItem as Assessment;
+
+            await Navigation.PushAsync(new AssessmentTask(course_id, assessmentItem.AssessmentId));
+        }
     }
 }

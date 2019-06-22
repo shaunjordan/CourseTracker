@@ -27,7 +27,7 @@ namespace CourseTracker.Views
 
             if (assessment_id != 0)
             {
-                BindingContext = new AssessmentViewModel(assessment_id);
+                BindingContext = new AssessmentViewModel(course_id);
             }
 		}
 

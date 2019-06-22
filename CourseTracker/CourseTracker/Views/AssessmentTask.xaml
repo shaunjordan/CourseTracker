@@ -4,9 +4,9 @@
              x:Class="CourseTracker.Views.AssessmentTask">
     <ContentPage.Content>
         <StackLayout>
-            <Button x:Name="ViewAssessmentDetails"
-                    Clicked="ViewAssessmentDetails_Clicked"
-                    Text="View Details"
+            <Button x:Name="SetAssessmentNotifications"
+                    Clicked="SetAssessmentNotifications_Clicked"
+                    Text="Set Notification"
                     BorderRadius="5"/>
             <Button x:Name="EditAssessmentDetails"
                     Clicked="EditAssessmentDetails_Clicked"

@@ -24,6 +24,8 @@ namespace CourseTracker.Data
            
         }
 
+        #region Term Tasks               
+
         public Task<List<Term>> GetTerms()
         {
             return database.Table<Term>().ToListAsync();
@@ -48,13 +50,7 @@ namespace CourseTracker.Data
         //{
         //    var terms = database.QueryAsync<Term>("SELECT * FROM Term WHERE TermId = ?", termId);
         //    return terms;
-        //}
-
-        public Task<List<Course>> GetCourses(int termId)
-        {
-            var termCourses = database.QueryAsync<Course>("SELECT * FROM Course WHERE TermId = ?", termId);
-            return termCourses;
-        }
+        //}        
 
         public Task<int> SaveTerm(Term term)
         {
@@ -72,6 +68,16 @@ namespace CourseTracker.Data
         {
             //TODO: prevent deletion if courses are attached
             return database.DeleteAsync<Term>(termId);
+        }
+
+        #endregion
+
+        #region Course Tasks
+
+        public Task<List<Course>> GetCourses(int termId)
+        {
+            var termCourses = database.QueryAsync<Course>("SELECT * FROM Course WHERE TermId = ?", termId);
+            return termCourses;
         }
 
         public Task<int> SaveCourse(Course course)
@@ -99,9 +105,13 @@ namespace CourseTracker.Data
             return database.DeleteAsync<Course>(courseId);
         }
 
-        public List<Assessment> GetAssessmentDetails(int assessmentId)
+        #endregion
+
+        #region Assessment Tasks
+
+        public List<Assessment> GetAssessmentDetails(int courseId)
         {
-            var assessmentDetails = database.QueryAsync<Assessment>("SELECT * FROM Assessment WHERE CourseId = ?", assessmentId).Result;
+            var assessmentDetails = database.QueryAsync<Assessment>("SELECT * FROM Assessment WHERE CourseId = ?", courseId).Result;
 
             return assessmentDetails;
         }
@@ -125,9 +135,15 @@ namespace CourseTracker.Data
             }
         }
 
+        //delete assessment
+
+        #endregion
+
         //Throwaway function to clear the databases
         public void DeleteTables()
         {
+            database.DeleteAllAsync<Assessment>().Wait();
+
             database.DeleteAllAsync<Course>().Wait();
 
             database.DeleteAllAsync<Term>().Wait();
