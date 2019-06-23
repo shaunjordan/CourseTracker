@@ -28,7 +28,7 @@ namespace CourseTracker.Views
         {
             base.OnAppearing();
 
-            assessmentDetails.ItemsSource = new AssessmentViewModel(course_id).GetAssessmentDetail(); ;
+            assessmentDetails.ItemsSource = new AssessmentViewModel(course_id).GetAssessmentDetail();
         }
 
         async void AssessmentDetails_ItemSelected(object sender, SelectedItemChangedEventArgs e)

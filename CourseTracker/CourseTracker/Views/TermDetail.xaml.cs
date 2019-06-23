@@ -37,7 +37,7 @@ namespace CourseTracker.Views
 
         async void AddCourse_TB_Activated(object sender, EventArgs e)
         {
-            //Pass in zero for to create a new Course
+            //Pass in zero to create a new Course
             await Navigation.PushModalAsync(new AddCourse(term_id, 0));
         }
 
