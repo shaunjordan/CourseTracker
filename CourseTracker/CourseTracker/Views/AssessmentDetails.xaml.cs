@@ -24,11 +24,11 @@ namespace CourseTracker.Views
 
 		}
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            assessmentDetails.ItemsSource = new AssessmentViewModel(course_id).GetAssessmentDetail();
+            assessmentDetails.ItemsSource = await App.Database.GetAssessments(course_id);
         }
 
         async void AssessmentDetails_ItemSelected(object sender, SelectedItemChangedEventArgs e)

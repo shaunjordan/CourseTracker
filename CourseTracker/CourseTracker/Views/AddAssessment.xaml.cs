@@ -16,7 +16,7 @@ namespace CourseTracker.Views
 	{
 
         int course_id;
-        int assessment_id;
+        int assessment_id = 0;
 
 		public AddAssessment (int courseId, int assessmentId)
 		{
@@ -27,7 +27,7 @@ namespace CourseTracker.Views
 
             if (assessment_id != 0)
             {
-                BindingContext = new AssessmentViewModel(course_id);
+                BindingContext = new AssessmentViewModel(assessment_id);
             }
 		}
 

@@ -109,9 +109,18 @@ namespace CourseTracker.Data
 
         #region Assessment Tasks
 
-        public List<Assessment> GetAssessmentDetails(int courseId)
+        //get the list of assessments
+        public Task<List<Assessment>> GetAssessments(int courseId)
         {
-            var assessmentDetails = database.QueryAsync<Assessment>("SELECT * FROM Assessment WHERE CourseId = ?", courseId).Result;
+            var assessmentsList = database.QueryAsync<Assessment>("SELECT * FROM Assessment WHERE CourseId = ?", courseId);
+
+            return assessmentsList;
+        }
+
+        //get the assessment detail for the edit
+        public List<Assessment> GetAssessmentDetails(int assessmentId)
+        {
+            var assessmentDetails = database.QueryAsync<Assessment>("SELECT * FROM Assessment WHERE AssessmentId = ?", assessmentId).Result;
 
             return assessmentDetails;
         }
@@ -142,12 +151,18 @@ namespace CourseTracker.Data
         //Throwaway function to clear the databases
         public void DeleteTables()
         {
-            database.DeleteAllAsync<Assessment>().Wait();
+            //database.DeleteAllAsync<Assessment>().Wait();
 
-            database.DeleteAllAsync<Course>().Wait();
+            //database.DeleteAllAsync<Course>().Wait();
 
-            database.DeleteAllAsync<Term>().Wait();
-            
+            //database.DeleteAllAsync<Term>().Wait();
+
+            database.DropTableAsync<Assessment>().Wait();
+
+            database.DropTableAsync<Course>().Wait();
+
+            database.DropTableAsync<Term>().Wait();
+
         }
 
     }
