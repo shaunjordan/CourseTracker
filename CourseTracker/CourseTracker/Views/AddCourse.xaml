@@ -6,22 +6,22 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout x:Name="courseEntryLines">
-                <Entry x:Name="CourseNameEntry" Placeholder="Enter Course Name" Text="{Binding CourseName}">
+                <Entry x:Name="CourseNameEntry" Placeholder="Enter Course Name" Text="{Binding CourseName}" Unfocused="CourseNameEntry_Unfocused">
                     <Entry.Behaviors>
                         <behaviors:Validation/>
                     </Entry.Behaviors>
                 </Entry>
-                <Entry x:Name="InstrNameEntry" Placeholder="Enter Instructor Name" Text="{Binding InstructorName}">
+                <Entry x:Name="InstrNameEntry" Placeholder="Enter Instructor Name" Text="{Binding InstructorName}" Unfocused="InstrNameEntry_Unfocused">
                     <Entry.Behaviors>
                         <behaviors:Validation/>
                     </Entry.Behaviors>
                 </Entry>
-                <Entry x:Name="InstrPhoneEntry" Placeholder="Enter Instructor Phone" Text="{Binding InstructorPhone}">
+                <Entry x:Name="InstrPhoneEntry" Placeholder="Enter Instructor Phone" Text="{Binding InstructorPhone}" Unfocused="InstrPhoneEntry_Unfocused">
                     <Entry.Behaviors>
                         <behaviors:Validation/>
                     </Entry.Behaviors>
                 </Entry>
-                <Entry x:Name="InstrEmailEntry" Placeholder="Enter Instructor Email" Text="{Binding InstructorEmail}">
+                <Entry x:Name="InstrEmailEntry" Placeholder="Enter Instructor Email" Text="{Binding InstructorEmail}" Unfocused="InstrEmailEntry_Unfocused">
                     <Entry.Behaviors>
                         <behaviors:Validation/>
                     </Entry.Behaviors>
@@ -36,6 +36,7 @@
                             <x:String>Dropped</x:String>
                         </x:Array>
                     </Picker.ItemsSource>
+                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
                 </Picker>
                 <Label Text="Course Start Date" FontSize="Small"/>
                 <DatePicker x:Name="CourseStart" 
@@ -49,7 +50,7 @@
                             MaximumDate="12/31/2050"
                             Date="{Binding EndDate}">
                 </DatePicker>
-                <Entry x:Name="NotesEntry" Placeholder="Enter Notes" Text="{Binding Notes}"/>
+                <Entry x:Name="NotesEntry" Placeholder="Enter Notes (optional)" Text="{Binding Notes}"/>
                 <Button x:Name="SaveCourseButton" Text="Save" Clicked="SaveCourseButton_Clicked"/>
             </StackLayout>
         </ScrollView>

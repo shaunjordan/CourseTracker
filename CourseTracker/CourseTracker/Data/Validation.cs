@@ -20,8 +20,9 @@ namespace CourseTracker.Data
         {
             base.OnDetachingFrom(bindable);
 
-            bindable.TextChanged -= Bindable_TextChanged;
+            bindable.TextChanged += Bindable_TextChanged;
         }
+                
 
         private void Bindable_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -35,7 +36,7 @@ namespace CourseTracker.Data
             }
             else
             {
-                _formEntry.BackgroundColor = Color.Red;
+                _formEntry.BackgroundColor = Color.MistyRose;
             }
             
         }
