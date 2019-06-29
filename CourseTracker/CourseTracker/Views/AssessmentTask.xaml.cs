@@ -43,7 +43,8 @@ namespace CourseTracker.Views
 
         private void SetAssessmentNotifications_Clicked(object sender, EventArgs e)
         {
-            ///set assessment modal
+            ///set assessment notification - get the 
+            //send that modal and pop it after setting the deal
         }
     }
 }

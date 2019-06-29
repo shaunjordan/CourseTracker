@@ -49,8 +49,8 @@ namespace CourseTracker.Views
 
             //await DisplayAlert("Alert",v.CourseLimit(termId).ToString(),"Cool Beans");
 
-            //if id is 0, create new course, otherwise update the course
-
+            
+            //simple validation on entries - need to convert to Behaviors and ViewModel
             if (String.IsNullOrWhiteSpace(CourseNameEntry.Text) || String.IsNullOrWhiteSpace(InstrNameEntry.Text) || String.IsNullOrWhiteSpace(InstrPhoneEntry.Text) || String.IsNullOrWhiteSpace(InstrEmailEntry.Text))
             {
                 await DisplayAlert("Error!","You have an invalid entry. Please complete all fields.","OK");
@@ -58,6 +58,15 @@ namespace CourseTracker.Views
                 return;
             }
 
+            //users cannot enter more than 6 courses per term
+            if (App.Database.GetCountOfCourses(termId) == 6)
+            {
+                await DisplayAlert("Error!", "You can only add 6 courses per term.", "OK");
+
+                return;
+            }
+
+            //if id is 0, create new course, otherwise update the course
             if (courseId == 0)
             {
                 course = new Course()

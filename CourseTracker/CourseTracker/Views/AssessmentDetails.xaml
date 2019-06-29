@@ -10,8 +10,8 @@
                         <Label Text="{Binding AssessmentName}"/>
                         <Label Text="Assessment Type" FontSize="Micro"/>
                         <Label Text="{Binding AssessmentType}"/>
-                        <Label Text="{Binding AssessmentStart}"/>
-                        <Label Text="{Binding AssessmentEnd}"/>
+                        <Label Text="{Binding AssessmentStartDate}"/>
+                        <Label Text="{Binding AssessmentEndDate}"/>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
