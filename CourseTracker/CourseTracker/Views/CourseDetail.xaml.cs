@@ -37,14 +37,6 @@ namespace CourseTracker.Views
             base.OnAppearing();
 
             courseDetail.ItemsSource = new CourseDetailViewModel(course_id).GetCourseDetail();
-
-            //CourseName.Text = App.Database.GetCourseDetails(course_id)[0].CourseName;
-            //InstructorName.Text = App.Database.GetCourseDetails(course_id)[0].InstructorName;
-            //InstructorPhone.Text = App.Database.GetCourseDetails(course_id)[0].InstructorPhone;
-            //InstructorEmail.Text = App.Database.GetCourseDetails(course_id)[0].InstructorEmail;
-            //Status.Text = App.Database.GetCourseDetails(course_id)[0].Status;
-            //CourseNotes.Text = App.Database.GetCourseDetails(course_id)[0].Notes;
-            //StartDate.Text = App.Database.GetCourseDetails(course_id)[0].StartDate.ToShortDateString();
         }
     }
 }

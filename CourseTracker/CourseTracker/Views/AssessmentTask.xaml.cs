@@ -28,9 +28,11 @@ namespace CourseTracker.Views
             await Navigation.PopAsync();
         }
 
-        private void DeleteAssessment_Clicked(object sender, EventArgs e)
+        async void DeleteAssessment_Clicked(object sender, EventArgs e)
         {
-            //delete assessment from DB
+            await App.Database.DeleteAssessment(assessment_id);
+
+            await Navigation.PopAsync();
         }
 
         async void EditAssessmentDetails_Clicked(object sender, EventArgs e)
@@ -41,7 +43,7 @@ namespace CourseTracker.Views
 
         private void SetAssessmentNotifications_Clicked(object sender, EventArgs e)
         {
-            // set notification for the due date of the assessment
+            ///set assessment modal
         }
     }
 }

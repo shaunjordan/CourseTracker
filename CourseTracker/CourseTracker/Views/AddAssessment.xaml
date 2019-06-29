@@ -13,6 +13,7 @@
                             <x:String>Performance</x:String>
                         </x:Array>
                     </Picker.ItemsSource>
+                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
                 </Picker>
                 <Label Text="Assessment Start Date" FontSize="Small"/>
                 <DatePicker x:Name="AssessmentStart" 

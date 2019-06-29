@@ -24,6 +24,18 @@ namespace CourseTracker.Data
            
         }
 
+        public int GetCountOfCourses(int termId)
+        {
+           
+
+            var courseCount = database.QueryAsync<Course>("SELECT CourseId FROM Course WHERE TermId = ?", termId).Result;
+
+            //result = courseCount.Count;
+
+            //return Convert.ToInt32(courseCount.Count);
+            return courseCount.Count;
+        }
+
         #region Term Tasks               
 
         public Task<List<Term>> GetTerms()
@@ -145,6 +157,11 @@ namespace CourseTracker.Data
         }
 
         //delete assessment
+        public Task<int> DeleteAssessment(int assessmentId)
+        {
+            //TODO: if assessments exists, cannot delete
+            return database.DeleteAsync<Assessment>(assessmentId);
+        }
 
         #endregion
 
