@@ -1,14 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CourseTracker.Views.AddCourse">
+             x:Class="CourseTracker.Views.AddCourse"
+             xmlns:behaviors="clr-namespace:CourseTracker.Data">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout x:Name="courseEntryLines">
-                <Entry x:Name="CourseNameEntry" Placeholder="Enter Course Name" Text="{Binding CourseName}"/>
-                <Entry x:Name="InstrNameEntry" Placeholder="Enter Instructor Name" Text="{Binding InstructorName}"/>
-                <Entry x:Name="InstrPhoneEntry" Placeholder="Enter Instructor Phone" Text="{Binding InstructorPhone}"/>
-                <Entry x:Name="InstrEmailEntry" Placeholder="Enter Instructor Email" Text="{Binding InstructorEmail}"/>
+                <Entry x:Name="CourseNameEntry" Placeholder="Enter Course Name" Text="{Binding CourseName}">
+                    <Entry.Behaviors>
+                        <behaviors:Validation/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Entry x:Name="InstrNameEntry" Placeholder="Enter Instructor Name" Text="{Binding InstructorName}">
+                    <Entry.Behaviors>
+                        <behaviors:Validation/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Entry x:Name="InstrPhoneEntry" Placeholder="Enter Instructor Phone" Text="{Binding InstructorPhone}">
+                    <Entry.Behaviors>
+                        <behaviors:Validation/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Entry x:Name="InstrEmailEntry" Placeholder="Enter Instructor Email" Text="{Binding InstructorEmail}">
+                    <Entry.Behaviors>
+                        <behaviors:Validation/>
+                    </Entry.Behaviors>
+                </Entry>
                 <Label Text="Course Status" FontSize="Small"/>
                 <Picker x:Name="StatusPicker">
                     <Picker.ItemsSource>

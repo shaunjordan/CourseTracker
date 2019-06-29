@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using CourseTracker.Models;
 using CourseTracker.ViewModel;
+using CourseTracker.Data;
 
 namespace CourseTracker.Views
 {
@@ -37,9 +38,19 @@ namespace CourseTracker.Views
 
         async void SaveCourseButton_Clicked(object sender, EventArgs e)
         {
+            SaveCourseButton.IsEnabled = false; 
+
+            if (String.IsNullOrWhiteSpace(CourseNameEntry.Text))
+            {
+
+            }
+
             Course course;
 
-            //If ID is 0, create new course, otherwise update the course
+
+            //await DisplayAlert("Alert",v.CourseLimit(termId).ToString(),"Cool Beans");
+
+            //if id is 0, create new course, otherwise update the course
             if (courseId == 0)
             {
                 course = new Course()
@@ -50,8 +61,8 @@ namespace CourseTracker.Views
                     InstructorPhone = InstrPhoneEntry.Text,
                     InstructorEmail = InstrEmailEntry.Text,
                     Status = StatusPicker.SelectedItem.ToString(),
-                    StartDate = CourseStart.Date.ToString("MM/dd/yyyy"),
-                    EndDate = CourseEnd.Date.ToString("MM/dd/yyyy"),
+                    StartDate = CourseStart.Date.ToString("mm/dd/yyyy"),
+                    EndDate = CourseEnd.Date.ToString("mm/dd/yyyy"),
                     Notes = NotesEntry.Text
                 };
             }
@@ -66,11 +77,12 @@ namespace CourseTracker.Views
                     InstructorPhone = InstrPhoneEntry.Text,
                     InstructorEmail = InstrEmailEntry.Text,
                     Status = StatusPicker.SelectedItem.ToString(),
-                    StartDate = CourseStart.Date.ToString("MM/dd/yyyy"),
-                    EndDate = CourseEnd.Date.ToString("MM/dd/yyyy"),
+                    StartDate = CourseStart.Date.ToString("mm/dd/yyyy"),
+                    EndDate = CourseEnd.Date.ToString("mm/dd/yyyy"),
                     Notes = NotesEntry.Text
                 };
             }
+
 
             await App.Database.SaveCourse(course);
 
@@ -82,5 +94,7 @@ namespace CourseTracker.Views
             base.OnAppearing();
 
         }
+
+        
     }
 }

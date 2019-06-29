@@ -14,6 +14,18 @@ namespace CourseTracker
         public MainPage()
         {
             InitializeComponent();
+
+            //on first load, add the code to the database
+
+            //Term exampleTerm = new Term()
+            //{
+            //    TermName = "Sample Term"
+            //    //startdate
+            //    //enddate
+            //};
+
+
+
         }
 
         private async void TermListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
