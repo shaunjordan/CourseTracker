@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CourseTracker.Views.CourseTask">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout Padding="10">
             <!--<Label x:Name="TermLabel" Text="{Binding TermName}"/>-->
             <Button x:Name="ViewCourseDetails"
@@ -21,14 +22,19 @@
                     Clicked="ViewAssessments_Clicked"
                     Text="View Assessment Details"
                     BorderRadius="5"/>
+            <Button x:Name="SetCourseNotifications"
+                    Text="Set Course Notifications"
+                    BorderRadius="5"
+                    Clicked="SetCourseNotifications_Clicked"/>
             <Button x:Name="DeleteCourse"
                     Clicked="DeleteCourse_Clicked"
                     Text="Delete Course"
-                    BorderRadius="5"/>
+                    BorderRadius="5"/>            
             <Button x:Name="BackButton" 
                     Clicked="BackButton_Clicked"
                     Text="Back"
                     BorderRadius="5"/>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

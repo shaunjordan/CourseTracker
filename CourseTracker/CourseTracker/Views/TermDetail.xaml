@@ -13,12 +13,15 @@
                 <!--<local:TermDetailCustom CourseName="{Binding CourseName}"/>-->
                 <ViewCell>
                     <ViewCell.View>
-                        <StackLayout Spacing="5">
+                        <StackLayout Padding="10">
                             <Label Text="{Binding CourseName}" FontSize="Micro"/>
+                            <Label Text="Instructor:" FontSize="Micro" TextDecorations="Underline"/>
                             <Label Text="{Binding InstructorName}" FontSize="Micro"/>
                             <Label Text="{Binding InstructorPhone}" FontSize="Micro"/>
                             <Label Text="{Binding InstructorEmail}" FontSize="Micro"/>
+                            <Label Text="Course Start" FontSize="Micro" TextDecorations="Underline"/>
                             <Label Text="{Binding StartDate}" FontSize="Micro"/>
+                            <Label Text="Course End" FontSize="Micro" TextDecorations="Underline"/>
                             <Label Text="{Binding EndDate}" FontSize="Micro"/>
                         </StackLayout>
                     </ViewCell.View>

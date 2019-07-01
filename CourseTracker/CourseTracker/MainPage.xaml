@@ -6,7 +6,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="AddTerm_TB" Text="Add Term" Activated="AddTerm_TB_Activated"></ToolbarItem>
-        <ToolbarItem x:Name="Delete" Text="Delete All" Activated="Delete_Activated"></ToolbarItem>
+        <!--<ToolbarItem x:Name="Delete" Text="Delete All" Activated="Delete_Activated"></ToolbarItem>-->
     </ContentPage.ToolbarItems>
 
     <ListView x:Name="termListView" ItemSelected="TermListView_ItemSelected" HasUnevenRows="True">
@@ -14,9 +14,11 @@
             <DataTemplate>
                 <ViewCell>
                     <ViewCell.View>
-                        <StackLayout Padding="10">
+                        <StackLayout Padding="10">                            
                             <Label Text="{Binding TermName}"/>
+                            <Label FontSize="Micro" Text="Term Start" TextDecorations="Underline"/>
                             <Label FontSize="Micro" Text="{Binding TermStart}"/>
+                            <Label FontSize="Micro" Text="Term End" TextDecorations="Underline"/>
                             <Label FontSize="Micro" Text="{Binding TermEnd}"/>
                         </StackLayout>
                     </ViewCell.View>

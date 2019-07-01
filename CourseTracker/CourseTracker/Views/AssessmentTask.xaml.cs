@@ -41,8 +41,9 @@ namespace CourseTracker.Views
             await Navigation.PushModalAsync(new AddAssessment(course_id, assessment_id));
         }
 
-        private void SetAssessmentNotifications_Clicked(object sender, EventArgs e)
+        async void SetAssessmentNotifications_Clicked(object sender, EventArgs e)
         {
+            await Navigation.PushModalAsync(new SetAssessmentNotification(assessment_id));
             ///set assessment notification - get the 
             //send that modal and pop it after setting the deal
         }

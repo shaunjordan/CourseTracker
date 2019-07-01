@@ -8,9 +8,11 @@
                 <ViewCell>
                     <StackLayout Padding="10">
                         <Label Text="{Binding AssessmentName}"/>
-                        <Label Text="Assessment Type" FontSize="Micro"/>
+                        <Label Text="Assessment Type" FontSize="Micro" TextDecorations="Underline"/>
                         <Label Text="{Binding AssessmentType}"/>
+                        <Label Text="Start Date" FontSize="Micro" TextDecorations="Underline"/>
                         <Label Text="{Binding AssessmentStartDate}"/>
+                        <Label Text="Due Date" FontSize="Micro" TextDecorations="Underline"/>
                         <Label Text="{Binding AssessmentEndDate}"/>
                     </StackLayout>
                 </ViewCell>

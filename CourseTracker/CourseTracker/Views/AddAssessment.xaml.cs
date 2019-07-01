@@ -57,7 +57,7 @@ namespace CourseTracker.Views
                     AssessmentType = AssessmentType.SelectedItem.ToString(),
                     AssessmentStartDate = AssessmentStart.Date.ToString("MM/dd/yyyy"),
                     AssessmentEndDate = AssessmentEnd.Date.ToString("MM/dd/yyyy")
-                };
+                };                
             }
 
             await App.Database.SaveAssessment(assessment);

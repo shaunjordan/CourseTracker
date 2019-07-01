@@ -4,17 +4,20 @@
              x:Class="CourseTracker.Views.SetAssessmentNotification">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Remind of the assessment in: "/>
+            <Label Text="Remind me of the assessment: "/>
             <Picker x:Name="AssessmentNotificaton">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
-                        <x:String>1 second</x:String>                        
+                        <x:String>Example Notification (2 seconds from now)</x:String>
+                        <x:String>1 month before due date</x:String>
+                        <x:String>1 week before due date</x:String>
+                        <x:String>1 day before due date</x:String>
                     </x:Array>
                 </Picker.ItemsSource>
                 <Picker.SelectedIndex>0</Picker.SelectedIndex>
             </Picker>
             <Button x:Name="SetReminder" Text="Set Reminder" Clicked="SetReminder_Clicked"/>
-            <Button x:Name="CancelReminder" Text="Cancel"/>
+            <Button x:Name="CancelReminder" Text="Cancel" Clicked="CancelReminder_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

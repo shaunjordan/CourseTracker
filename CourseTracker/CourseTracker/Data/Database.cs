@@ -117,6 +117,20 @@ namespace CourseTracker.Data
             return database.DeleteAsync<Course>(courseId);
         }
 
+        public DateTime GetCourseStart(int courseId)
+        {
+            var dueDate = database.QueryAsync<Course>("SELECT StartDate, EndDate FROM Course WHERE CourseId = ?", courseId).Result;
+
+            return DateTime.Parse(dueDate[0].StartDate);
+        }
+
+        public DateTime GetCourseEnd(int courseId)
+        {
+            var dueDate = database.QueryAsync<Course>("SELECT StartDate, EndDate FROM Course WHERE CourseId = ?", courseId).Result;
+
+            return DateTime.Parse(dueDate[0].EndDate);
+        }
+
         #endregion
 
         #region Assessment Tasks
@@ -163,6 +177,20 @@ namespace CourseTracker.Data
             return database.DeleteAsync<Assessment>(assessmentId);
         }
 
+        public DateTime GetAssessementDue(int assessmentId)
+        {
+            var dueDate = database.QueryAsync<Assessment>("SELECT AssessmentEndDate FROM Assessment WHERE AssessmentId = ?", assessmentId).Result;
+
+            return DateTime.Parse(dueDate[0].AssessmentEndDate);
+        }
+
+        public List<Assessment> GetAssesmentTypes(int courseId)
+        {
+            var assessmentTypes = database.QueryAsync<Assessment>("SELECT AssessmentType FROM Assessment WHERE AssessmentId = ?", courseId).Result;
+
+            return assessmentTypes;
+        }
+
         #endregion
 
         //Throwaway function to clear the databases
@@ -179,6 +207,22 @@ namespace CourseTracker.Data
             database.DropTableAsync<Course>().Wait();
 
             database.DropTableAsync<Term>().Wait();
+
+        }
+
+        //create sample data
+        public Task<int> SampleData()
+        {
+
+            Term sampleTerm = new Term()
+            {
+                
+                TermName = "Sample Term",
+                TermStart = "01/01/2019",
+                TermEnd = "03/01/2019"
+            };
+
+           return database.InsertAsync(sampleTerm);
 
         }
 

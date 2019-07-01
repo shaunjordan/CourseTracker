@@ -43,8 +43,8 @@ namespace CourseTracker.Views
 
         protected override async void OnAppearing()
         {
-            base.OnAppearing();                      
-            
+            base.OnAppearing();
+                        
             courseListView.ItemsSource = await App.Database.GetCourses(term_id);
         }
 

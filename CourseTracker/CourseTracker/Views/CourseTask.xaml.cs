@@ -54,5 +54,12 @@ namespace CourseTracker.Views
         {
             await Navigation.PushAsync(new AssessmentDetails(courseId));
         }
+
+        async void SetCourseNotifications_Clicked(object sender, EventArgs e)
+        {
+
+            await Navigation.PushModalAsync(new SetCourseNotifications(courseId));
+
+        }
     }
 }

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseTracker.Views.SetCourseNotifications">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Remind me when the course starts: "/>
+            <Picker x:Name="CourseStartNotification">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Example Notification (2 seconds from now)</x:String>
+                        <x:String>1 month before</x:String>
+                        <x:String>1 week before</x:String>
+                        <x:String>1 day before</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+                <Picker.SelectedIndex>0</Picker.SelectedIndex>
+            </Picker>
+            <Label Text="Remind me when the course ends: "/>
+            <Picker x:Name="CourseEndNotification">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Example Notification (2 seconds from now)</x:String>
+                        <x:String>1 month before</x:String>
+                        <x:String>1 week before</x:String>
+                        <x:String>1 day before</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+                <Picker.SelectedIndex>0</Picker.SelectedIndex>
+            </Picker>
+            <Button x:Name="SetCourseReminder" Text="Set Course Start Reminder" Clicked="SetCourseReminder_Clicked"/>
+            <Button x:Name="SetCourseEndR" Text="Set Course End Reminder" Clicked="SetCourseEndR_Clicked"/>
+            <Button x:Name="CancelCourseReminder" Text="Cancel" Clicked="CancelCourseReminder_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
