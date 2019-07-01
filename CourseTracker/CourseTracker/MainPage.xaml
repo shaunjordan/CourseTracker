@@ -6,6 +6,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="AddTerm_TB" Text="Add Term" Activated="AddTerm_TB_Activated"></ToolbarItem>
+        <ToolbarItem x:Name="CreateSample" Text="Sample Data" Activated="CreateSample_Activated"></ToolbarItem>
         <!--<ToolbarItem x:Name="Delete" Text="Delete All" Activated="Delete_Activated"></ToolbarItem>-->
     </ContentPage.ToolbarItems>
 
